@@ -1,0 +1,10 @@
+<div class="section-header">
+  <div {{#if isNpc}} class="section-header-text section-header-npc" {{else}} class="section-header-text" {{/if}}>
+    {{localize text}}
+  </div>
+  {{#if small}}
+  <img {{#if isNpc}} class="section-header-img-npc" {{else}} class="section-header-img" {{/if}} src="{{actor.headerImgSmall}}">
+  {{else}}
+  <img {{#if isNpc}} class="section-header-img-npc" {{else}} class="section-header-img" {{/if}} src="{{actor.headerImg}}">
+  {{/if}}
+</div>

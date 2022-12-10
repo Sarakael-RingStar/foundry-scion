@@ -1,0 +1,199 @@
+<form class="{{cssClass}} flexcol character-sheet-background" autocomplete="off">
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="105" width="100" />
+        <div class="header-fields">
+            <div>
+                <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
+                        placeholder="{{localize 'STORYPATH.NameTitle'}}" /></h1>
+            </div>
+            <div>
+                <h1 class="charname"><input name="system.archetype" type="text" value="{{system.archetype}}"
+                        placeholder="{{localize 'STORYPATH.Archetype'}}" /></h1>
+            </div>
+        </div>
+    </header>
+
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="stats">{{localize "STORYPATH.Stats"}}</a>
+        <a class="item" data-tab="qualities">{{localize "STORYPATH.Qualities"}}/{{localize "STORYPATH.Flairs"}}</a>
+        <a class="item" data-tab="effects">{{localize "STORYPATH.Effects"}}</a>
+        <a class="item" data-tab="description">{{localize "STORYPATH.Description"}}</a>
+    </nav>
+
+    <section class="sheet-body">
+        <div class="tab" data-group="primary" data-tab="stats">
+            {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Pools' isNpc=true}}
+            <div class="pools flex-group-center">
+                <div class="flex-group-left pool">
+                    <label class="resource-label roll-pool" data-pool="primary">
+                        {{localize "STORYPATH.Primary"}} {{localize "STORYPATH.Pool"}}
+                    </label>
+                    <div class="d-flex">
+                        <input class="pool-value-input" type="number" name="system.pools.primary.value"
+                            value="{{system.pools.primary.value}}" data-dtype="Number" />
+                        <input type="text" name="system.pools.primary.actions" value="{{system.pools.primary.actions}}"
+                            placeholder="Input what actions this pool covers" />
+                    </div>
+                </div>
+                <div class="flex-group-left pool">
+                    <label class="resource-label roll-pool" data-pool="secondary">
+                        {{localize "STORYPATH.Secondary"}} {{localize "STORYPATH.Pool"}}
+                    </label>
+                    <div class="d-flex">
+                        <input class="pool-value-input" type="number" name="system.pools.secondary.value"
+                            value="{{system.pools.secondary.value}}" data-dtype="Number" />
+                        <input type="text" name="system.pools.secondary.actions"
+                            value="{{system.pools.secondary.actions}}"
+                            placeholder="Input what actions this pool covers" />
+                    </div>
+                </div>
+                <div class="flex-group-left pool">
+                    <label class="resource-label roll-pool" data-pool="desperation">
+                        {{localize "STORYPATH.Desperation"}} {{localize "STORYPATH.Pool"}}
+                    </label>
+                    <div class="d-flex">
+                        <input class="pool-value-input" type="number" name="system.pools.desperation.value"
+                            value="{{system.pools.desperation.value}}" data-dtype="Number" />
+                        <input type="text" name="system.pools.desperation.actions"
+                            value="{{system.pools.desperation.actions}}"
+                            placeholder="Input what actions this pool covers" />
+                    </div>
+                </div>
+            </div>
+            {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Dice&Combat' isNpc=true}}
+            <div>
+                <div id="character-combat-tab">
+                    <div class="grid grid-3col flex-group-center">
+                        <div class="resource flex-group-center d-flex">
+                            <div>
+                                <div class="flexrow">
+                                    <label for="system.health" class="resource-label">{{localize "STORYPATH.Health"}}<i
+                                            class="fas fa-calculator cursor-pointer" id="calculate-health"
+                                            style="margin-left:3px;" title="Calculate Health"></i></label>
+                                </div>
+                                <div class="resource-counter" data-states="/:bashing,x:lethal,*:aggravated"
+                                    data-max="{{system.health.levels}}" data-bashing="{{system.health.bashing}}"
+                                    data-lethal="{{system.health.lethal}}"
+                                    data-aggravated="{{system.health.aggravated}}" data-name="system.health">
+                                    {{#numLoop system.health.levels}}
+                                    <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+                                    {{/numLoop}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resource-content flexrow flex-center flex-between">
+                            <div>
+                                <label class="resource-label">{{localize "STORYPATH.Defense"}}</label>
+                                <input type="number" name="system.defense.value" value="{{system.defense.value}}"
+                                    data-dtype="Number" />
+                            </div>
+                        </div>
+                        <div class="resource-content flexrow flex-center flex-between">
+                            <div>
+                                <label class="resource-label roll-pool" data-pool="initiative">{{localize
+                                    "STORYPATH.Initiative"}}</label>
+                                <input type="number" name="system.initiative.value" value="{{system.initiative.value}}"
+                                    data-dtype="Number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-4col flex-group-center">
+                        <div class="resource-content flexrow flex-center flex-between">
+                            <div>
+                                <label class="resource-label roll-pool" data-pool="threat">{{localize
+                                    "STORYPATH.Threat"}}</label>
+                                <input type="number" name="system.threat.value" value="{{system.threat.value}}"
+                                    data-dtype="Number" />
+                            </div>
+                        </div>
+                        <div class="resource-content flexrow flex-center flex-between">
+                            <div>
+                                <label class="resource-label">{{localize
+                                    "STORYPATH.Legend"}}</label>
+                                <input type="number" name="system.legend.value" value="{{system.legend.value}}"
+                                    data-dtype="Number" />
+                            </div>
+                        </div>
+                        <div class="resource-content flexrow flex-center flex-between">
+                            <div>
+                                <label class="resource-label">{{localize
+                                    "STORYPATH.Size"}}</label>
+                                <input type="number" name="system.size.value" value="{{system.size.value}}"
+                                    data-dtype="Number" />
+                            </div>
+                        </div>
+                        <div class="resource-content flexrow flex-center flex-between">
+                            <div>
+                                <label class="resource-label">{{localize
+                                    "STORYPATH.Scale"}}</label>
+                                <input type="number" name="system.scale.value" value="{{system.scale.value}}"
+                                    data-dtype="Number" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resources">
+                        <button id="rollSkill" class="roll-button"><i class="fas fa-dice-d10"></i>{{localize
+                            "STORYPATH.RollPool"}}</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <label class="resource-label">
+                    {{localize "STORYPATH.Drive"}}
+                </label>
+                <input type="text" name="system.drive" value="{{system.drive}}" />
+            </div>
+            <div>
+                <label class="resource-label">
+                    {{localize "STORYPATH.Extras"}}
+                </label>
+                <textarea type="text" name="system.extras" rows="6">{{system.extras}}</textarea>
+            </div>
+        </div>
+        {{!-- Qualities & Flairs Tab --}}
+        <div class="tab items" data-group="primary" data-tab="qualities">
+            <label class="resource-label">{{localize
+                "STORYPATH.Tier"}}</label>
+            <input class="mb-1" type="number" name="system.tier" value="{{system.tier}}"
+                data-dtype="Number" />
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Qualities' name='quality'
+            list=actor.qualities isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Flairs' name='flair'
+            list=actor.flairs isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Boons' name='boon' list=actor.boons isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Birthrights' name='birthright' list=actor.birthrights isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Knacks' name='knack' list=actor.knacks isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Spells' name='spell' list=actor.spells isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Fatebindings' name='fatebinding'
+            isNpc=true
+            list=actor.fatebindings}}
+        </div>
+
+        <div class="tab effects" data-group="primary" data-tab="effects">
+            {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.SavedRolls' isNpc=true}}
+            <ol class="items-list">
+                {{#each system.savedRolls as |item id|}}
+                <li class="item flexrow" data-item-id="{{id}}">
+                    <h4 class="item-name">{{item.name}}</h4>
+                    <div class="resource-table-value resource-value-static">
+                        {{item.rollType}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control quick-roll" title="Roll"><i class="fas fa-dice-d10"></i></a>
+                        <a class="item-control saved-roll" title="Edit"><i class="fas fa-edit"></i></a>
+                        <a class="item-control delete-saved-roll" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+                {{/each}}
+            </ol>
+            {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Effects' isNpc=true}}
+            {{> systems/storypath-fvtt/templates/actor/active-effects.html}}
+        </div>
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="description">
+            {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Description&Notes' isNpc=true}}
+            {{editor system.biography target="system.biography" button=true owner=owner editable=true}}
+        </div>
+    </section>
+</form>

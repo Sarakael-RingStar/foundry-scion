@@ -1,0 +1,444 @@
+{
+  "Actor": {
+    "types": [
+      "scion",
+      "npc"
+    ],
+    "templates": {
+      "base": {
+        "traits": {
+          "languages": {
+            "value": [],
+            "custom": ""
+          }
+        },
+        "details": {
+          "color": "#000000",
+          "chronicle": ""
+        }
+      },
+      "savedRolls": {},
+      "characterattributes": {
+        "approaches": {
+          "power": {
+            "favored": false
+          },
+          "finesse": {
+            "favored": false
+          },
+          "resilience": {
+            "favored": false
+          }
+        }
+      },
+      "characterhealth": {
+        "health": {
+          "levels": {
+            "zero": {
+              "value": 0,
+              "status": "None",
+              "penalty": 0
+            },
+            "one": {
+              "value": 1,
+              "status": "Bruised",
+              "penalty": 1
+            },
+            "two": {
+              "value": 1,
+              "status": "Injured",
+              "penalty": 2
+            },
+            "four": {
+              "value": 1,
+              "status": "Maimed",
+              "penalty": 4
+            },
+            "inc": {
+              "value": 1,
+              "status": "Taken Out",
+              "penalty": "inc"
+            }
+          },
+          "bashing": 0,
+          "lethal": 0,
+          "aggravated": 0
+        }
+      },
+      "player": {
+        "biography": "",
+        "experience": {
+          "gained": 0,
+          "spent": 0,
+          "remaining": 0
+        }
+      }
+    },
+    "scion": {
+      "templates": [
+        "base",
+        "player",
+        "characterhealth"
+      ],
+      "approaches": {
+        "power": {
+          "name": "Power",
+          "label": "STORYPATH.Power",
+          "favored": false
+        },
+        "finesse": {
+          "name": "Finesse",
+          "label": "STORYPATH.Finesse",
+          "favored": false
+        },
+        "resistance": {
+          "name": "Resistance",
+          "label": "STORYPATH.Resistance",
+          "favored": false
+        }
+      },
+      "attributes": {
+        "intellect": {
+          "value": 1,
+          "name": "STORYPATH.Intellect",
+          "arena": "mental",
+          "approach": "power"
+        },
+        "might": {
+          "value": 1,
+          "name": "STORYPATH.Might",
+          "arena": "physical",
+          "approach": "power"
+        },
+        "presence": {
+          "value": 1,
+          "name": "STORYPATH.Presence",
+          "arena": "social",
+          "approach": "power"
+        },
+        "cunning": {
+          "value": 1,
+          "name": "STORYPATH.Cunning",
+          "arena": "mental",
+          "approach": "finesse"
+        },
+        "dexterity": {
+          "value": 1,
+          "name": "STORYPATH.Dexterity",
+          "arena": "physical",
+          "approach": "finesse"
+        },
+        "manipulation": {
+          "value": 1,
+          "name": "STORYPATH.Manipulation",
+          "arena": "social",
+          "approach": "finesse"
+        },
+        "resolve": {
+          "value": 1,
+          "name": "STORYPATH.Resolve",
+          "arena": "mental",
+          "approach": "resistance"
+        },
+        "stamina": {
+          "value": 1,
+          "name": "STORYPATH.Stamina",
+          "arena": "physical",
+          "approach": "resistance"
+        },
+        "composure": {
+          "value": 1,
+          "name": "STORYPATH.Composure",
+          "arena": "social",
+          "approach": "resistance"
+        }
+      },
+      "skills": {
+        "academics": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Academics"
+        },
+        "athletics": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Athletics"
+        },
+        "close": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.CloseCombat"
+        },
+        "culture": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Culture"
+        },
+        "empathy": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Empathy"
+        },
+        "firearms": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Firearms"
+        },
+        "integrity": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Integrity"
+        },
+        "leadership": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Leadership"
+        },
+        "medicine": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Medicine"
+        },
+        "occult": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Occult"
+        },
+        "persuasion": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Persuasion"
+        },
+        "pilot": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Pilot"
+        },
+        "science": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Science"
+        },
+        "subterfuge": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Subterfuge"
+        },
+        "survival": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Survival"
+        },
+        "technology": {
+          "value": 0,
+          "path": false,
+          "name": "STORYPATH.Technology"
+        }
+      },
+      "virtue": {
+        "value": 0,
+        "virtue": "",
+        "countervirtue": ""
+      },
+      "deeds": {
+        "short": "",
+        "long": "",
+        "band": "",
+        "memory": "",
+        "draconic": "",
+        "worldly": "",
+        "notes": ""
+      },
+      "info": {
+        "tier": "origin",
+        "parent": ""
+      },
+      "defense": {
+        "value": 0
+      },
+      "movement": {
+        "value": 0
+      },
+      "divinitydice": {
+        "value": 0,
+        "max": 10
+      },
+      "momentum": {
+        "value": 0
+      },
+      "legend": {
+        "value": 0,
+        "total": 0,
+        "imbued": 0,
+        "title": ""
+      },
+      "inheritance": {
+        "value": 0,
+        "max": 0,
+        "imbued": 0
+      },
+      "magics": ""
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ],
+      "archetype": "",
+      "health": {
+        "levels": 1,
+        "bashing": 0,
+        "lethal": 0,
+        "aggravated": 0
+      },
+      "pools": {
+        "primary": {
+          "value": 0,
+          "actions": ""
+        },
+        "secondary": {
+          "value": 0,
+          "actions": ""
+        },
+        "desperation": {
+          "value": 0,
+          "actions": ""
+        }
+      },
+      "drive": "",
+      "extras": "",
+      "tier": 1,
+      "defense": {
+        "value": 0
+      },
+      "initiative": {
+        "value": 0
+      },
+      "threat": {
+        "value": 0
+      },
+      "legend": {
+        "value": 0
+      },
+      "size": {
+        "value": 0
+      },
+      "scale": {
+        "value": 0
+      }
+    }
+  },
+  "Item": {
+    "types": [
+      "item",
+      "path",
+      "calling",
+      "knack",
+      "boon",
+      "purview",
+      "birthright",
+      "contact",
+      "specialty",
+      "condition",
+      "fatebinding",
+      "quality",
+      "flair",
+      "health",
+      "spell"
+    ],
+    "templates": {
+      "base": {
+        "description": ""
+      },
+      "points": {
+        "points": 0
+      }
+    },
+    "item": {
+      "templates": [
+        "base"
+      ],
+      "quantity": 1
+    },
+    "path": {
+      "templates": [
+        "base"
+      ]
+    },
+    "calling": {
+      "templates": [
+        "base",
+        "points"
+      ]
+    },
+    "birthright": {
+      "templates": [
+        "base",
+        "points"
+      ],
+      "type": "relic"
+    },
+    "contact": {
+      "templates": [
+        "base"
+      ]
+    },
+    "knack": {
+      "templates": [
+        "base"
+      ],
+      "active": false,
+      "cost": 0,
+      "costtype": "legend"
+    },
+    "boon": {
+      "templates": [
+        "base"
+      ],
+      "cost": "",
+      "costtype": "imbue"
+    },
+    "purview": {
+      "templates": [
+        "base"
+      ]
+    },
+    "specialty": {
+      "templates": [
+        "base"
+      ],
+      "skill": ""
+    },
+    "condition": {
+      "templates": [
+        "base"
+      ]
+    },
+    "fatebinding": {
+      "templates": [
+        "base"
+      ]
+    },
+    "quality": {
+      "templates": [
+        "base"
+      ]
+    },
+    "flair": {
+      "templates": [
+        "base"
+      ]
+    },
+    "health": {
+      "templates": [
+        "base"
+      ],
+      "level": 0,
+      "wounded": false
+    },
+    "spell": {
+      "templates": [
+        "base"
+      ]
+    }
+  }
+}

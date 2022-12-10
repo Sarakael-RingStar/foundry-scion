@@ -1,0 +1,32 @@
+<div class="group-resources">
+    <div class="resource-item d-flex flex-between">
+        <div class="resource-label">{{localize "STORYPATH.Tension"}}: {{groupResources.tension}}
+        </div>
+        {{#if isGM}}
+        <div class="resource-controls" style="margin-left: 25px;">
+            <span data-type="tension" class="minus resource-button">-</span>
+            <span data-type="tension" class="plus resource-button">+</span>
+        </div>
+        {{/if}}
+    </div>
+    <div class="resource-item d-flex flex-between">
+        <div class="resource-label">{{localize "STORYPATH.Momentum"}}: {{groupResources.momentum}}
+        </div>
+        {{#if isGM}}
+        <div class="resource-controls" style="margin-left: 25px;">
+            <span data-type="momentum" class="minus resource-button">-</span>
+            <span data-type="momentum" class="plus resource-button">+</span>
+        </div>
+        {{/if}}
+    </div>
+    <div class="resource-item d-flex flex-between">
+        <div class="resource-label">{{localize "STORYPATH.Collateral"}}: {{groupResources.collateral}}
+        </div>
+        {{#if isGM}}
+        <div class="resource-controls" style="margin-left: 25px;">
+            <span data-type="collateral" class="minus resource-button">-</span>
+            <span data-type="collateral" class="plus resource-button">+</span>
+        </div>
+        {{/if}}
+    </div>
+</div>

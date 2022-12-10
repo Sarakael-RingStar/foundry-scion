@@ -1,0 +1,267 @@
+{
+    "STORYPATH.Name": "Name",
+    "STORYPATH.Chronicle": "Chronicle",
+    "STORYPATH.Parent": "Parent",
+    "STORYPATH.Level": "Level",
+    "STORYPATH.Health": "Health",
+    "STORYPATH.HealthLevels": "Health Levels",
+
+    "STORYPATH.Help": "Help",
+
+    "STORYPATH.SetDotColors": "Set Dot Colors",
+    "STORYPATH.DotColors": "Dot Colors",
+
+    "STORYPATH.Tension": "Tension",
+    "STORYPATH.TensionDescription": "Set the current game tension.",
+    "STORYPATH.ShowResources": "Show Resources Box",
+    "STORYPATH.ShowResourcesHint": "Who sees the resources box",
+    "STORYPATH.SheetStyle": "Sheet Style",
+    "STORYPATH.SheetStyleDescription": "Style of the character sheets",
+
+    "STORYPATH.Collateral": "Collateral",
+
+    "STORYPATH.AllPlayers": "All Players",
+    "STORYPATH.SGOnly": "Storyguide Only",
+    "STORYPATH.HideBox": "Hide Box",
+
+    "STORYPATH.NameTitle": "Name/Title",
+    "STORYPATH.Archetype": "Archetype",
+
+    "STORYPATH.Creature": "Creature",
+
+    "STORYPATH.Scion": "Scion",
+
+    "STORYPATH.Origin": "Origin",
+    "STORYPATH.Hero": "Hero",
+    "STORYPATH.Demigod": "Demigod",
+    "STORYPATH.Dragon": "Dragon",
+
+    "STORYPATH.Attribute": "Attribute",
+    "STORYPATH.Attributes": "Attributes",
+
+    "STORYPATH.Skill": "Skill",
+    "STORYPATH.Skills": "Skills",
+
+    "STORYPATH.Combat": "Combat",
+    "STORYPATH.Movement": "Movement",
+    "STORYPATH.DivinityDice": "Divinity Dice",
+
+    "STORYPATH.Legend": "Legend",
+    "STORYPATH.Inheritance": "Inheritance",
+    "STORYPATH.Imbued": "Imbued",
+    "STORYPATH.Defense": "Defense",
+    "STORYPATH.Momentum": "Momentum",
+
+    "STORYPATH.Equipped": "Equipped",
+
+    "STORYPATH.Penalty": "Penalty",
+
+    "STORYPATH.Attack": "Attack",
+
+    "STORYPATH.Power": "Power",
+    "STORYPATH.Finesse": "Finesse",
+    "STORYPATH.Resistance": "Resistance",
+
+    "STORYPATH.Intellect": "Intellect",
+    "STORYPATH.Might": "Might",
+    "STORYPATH.Presence": "Presence",
+    "STORYPATH.Cunning": "Cunning",
+    "STORYPATH.Dexterity": "Dexterity",
+    "STORYPATH.Manipulation": "Manipulation",
+    "STORYPATH.Resolve": "Resolve",
+    "STORYPATH.Stamina": "Stamina",
+    "STORYPATH.Composure": "Composure",
+
+    "STORYPATH.Academics": "Academics",
+    "STORYPATH.Athletics": "Athletics",
+    "STORYPATH.CloseCombat": "Close Combat",
+    "STORYPATH.Culture": "Culture",
+    "STORYPATH.Empathy": "Empathy",
+    "STORYPATH.Firearms": "Firearms",
+    "STORYPATH.Integrity": "Integrity",
+    "STORYPATH.Leadership": "Leadership",
+    "STORYPATH.Medicine": "Medicine",
+    "STORYPATH.Occult": "Occult",
+    "STORYPATH.Persuasion": "Persuasion",
+    "STORYPATH.Pilot": "Pilot",
+    "STORYPATH.Science": "Science",
+    "STORYPATH.Subterfuge": "Subterfuge",
+    "STORYPATH.Survival": "Survival",
+    "STORYPATH.Technology": "Technology",
+    "STORYPATH.None": "None",
+
+    "STORYPATH.CurrentPenalty": "Current Penalty",
+    "STORYPATH.WoundPenalty": "Wound Penalty",
+    "STORYPATH.Bruised": "Bruised",
+    "STORYPATH.Injured": "Injured",
+    "STORYPATH.Maimed": "Maimed",
+    "STORYPATH.ArmorPenalty": "Armor Penalty",
+    "STORYPATH.Status": "Status",
+
+    "STORYPATH.TargetNumber": "Target Number",
+    "STORYPATH.Reroll": "Reroll",
+    "STORYPATH.DoubleSuccess": "Double Success",
+    "STORYPATH.DoubleSuccesses": "Double Successes",
+    "STORYPATH.Difficulty": "Difficulty",
+    "STORYPATH.NumberAgain": "#-Again",
+    "STORYPATH.Specialty": "Specialty",
+    "STORYPATH.HasSpecialty": "Has Specialty",
+    "STORYPATH.Specialties": "Specialties",
+    "STORYPATH.RerollNumDice": "Reroll Num Dice",
+    "STORYPATH.Scale": "Scale",
+    "STORYPATH.Size": "Size",
+    "STORYPATH.Threat": "Threat",
+
+    "STORYPATH.Standard": "Standard",
+    "STORYPATH.Elite": "Elite",
+    "STORYPATH.Supernatural": "Supernatural",
+    "STORYPATH.Incredible": "Incredible",
+    "STORYPATH.Godlike": "Godlike",
+    "STORYPATH.Supernal": "Supernal",
+    "STORYPATH.Titanic": "Titanic",
+
+    "STORYPATH.Dice": "Dice",
+
+    "STORYPATH.Remembrance": "Remembrance",
+    "STORYPATH.Virtue": "Virtue",
+    "STORYPATH.Virtues": "Virtues",
+    "STORYPATH.Intimacy": "Intimacy",
+    "STORYPATH.Intimacies": "Intimacies",
+    "STORYPATH.Stats": "Stats",
+    "STORYPATH.Qualities": "Qualities",
+    "STORYPATH.Flairs": "Flairs",
+    "STORYPATH.Wound": "Wound",
+    "STORYPATH.Wounds": "Wounds",
+
+    "STORYPATH.Gained": "Gained",
+    "STORYPATH.Spent": "Spent",
+    "STORYPATH.Remaining": "Remaining",
+
+    "STORYPATH.Equipment": "Equipment",
+    "STORYPATH.Deeds": "Deeds",
+    "STORYPATH.Notes": "Notes",
+    "STORYPATH.Traits": "Traits",
+    "STORYPATH.Paths": "Paths",
+    "STORYPATH.Knacks": "Knacks",
+    "STORYPATH.Powers": "Powers",
+    "STORYPATH.ShortTerm": "Short-Term",
+    "STORYPATH.LongTerm": "Long-Term",
+    "STORYPATH.Memory": "Memory",
+    "STORYPATH.Draconic": "Draconic",
+    "STORYPATH.Worldly": "Worldly",
+    "STORYPATH.Band": "Band",
+    "STORYPATH.Active": "Active",
+
+
+    "STORYPATH.Description": "Description",
+    "STORYPATH.Items": "Items",
+    "STORYPATH.Templates": "Templates",
+
+    "STORYPATH.Requirement": "Requirement",
+
+    "STORYPATH.Cost": "Cost",
+    "STORYPATH.LegendCost": "Legend Cost",
+    "STORYPATH.Type": "Type",
+
+    "STORYPATH.Points": "Points",
+    "STORYPATH.Rating": "Rating",
+
+    "STORYPATH.Roll": "Roll",
+    "STORYPATH.RollDice": "Roll Dice",
+    "STORYPATH.RollSkill": "Roll Skill",
+    "STORYPATH.RollPool": "Roll Pool",
+
+    "STORYPATH.BonusSuccesses": "Bonus Successes",
+    "STORYPATH.MiscPenalty": "Misc Penalty",
+    "STORYPATH.DicePenalty": "Dice Penalty",
+    "STORYPATH.DiceModifier": "Dice Modifier",
+    "STORYPATH.Enhancement": "Enhancement",
+    
+    "STORYPATH.MiscBonus": "Misc Bonus",
+    "STORYPATH.BonusDice": "Bonus Dice",
+    "STORYPATH.Successes": "Successes",
+    "STORYPATH.DamageDice": "Damage Dice",
+    "STORYPATH.DamageSuccesses": "Damage Successes",
+
+    "STORYPATH.Primary": "Primary",
+    "STORYPATH.Secondary": "Secondary",
+    "STORYPATH.Desperation": "Desperation",
+    "STORYPATH.Drive": "Drive",
+    "STORYPATH.Tier": "Tier",
+    "STORYPATH.Extras": "Extras",
+    "STORYPATH.Pool": "Pool",
+    "STORYPATH.Pools": "Pools",
+
+    "STORYPATH.Languages": "Languages",
+
+    "STORYPATH.TraitSave": "Update",
+    "STORYPATH.TraitSelectorSpecial": "Special (Split with Semi-Colon)",
+
+    "STORYPATH.Effects": "Effects",
+    "STORYPATH.EffectNew": "EffectNew",
+    "STORYPATH.EffectTemporary": "Effect Temporary",
+    "STORYPATH.EffectPassive": "Effect Passive",
+    "STORYPATH.EffectInactive": "Effect Inactive",
+
+    "STORYPATH.Add": "Add",
+    "STORYPATH.EffectCreate": "Effect Create",
+    "STORYPATH.EffectToggle": "Effect Toggle",
+    "STORYPATH.EffectEdit": "Effect Edit",
+    "STORYPATH.EffectDelete": "Effect Delete",
+    "STORYPATH.Duration": "Duration",
+    "STORYPATH.Source": "Source",
+
+    "STORYPATH.Initiative": "Initiative",
+
+    "STORYPATH.Guide": "Guide",
+    "STORYPATH.Follower": "Follower",
+    "STORYPATH.Relic": "Relic",
+    "STORYPATH.Other": "Other",
+
+    "STORYPATH.ImbueLegend": "Imbue Legend",
+
+    "STORYPATH.Imbue": "Imbue",
+    "STORYPATH.Spend": "Spend",
+
+    "STORYPATH.Armor": "Armor",
+
+    "STORYPATH.ItemRating": "Item Rating",
+
+    "STORYPATH.EnhancementOn0Successes": "Enhancement on 0 successes",
+    "STORYPATH.WoundLevel": "Wound Level",
+    "STORYPATH.Wounded": "Wounded",
+
+    "STORYPATH.DragonMagics": "Dragon Magics",
+
+    "STORYPATH.Save": "Save",
+    "STORYPATH.Update": "Update",
+    "STORYPATH.EnterNewRollName": "Enter New Roll Name",
+
+    "STORYPATH.Conditions": "Conditions",
+    "STORYPATH.Callings": "Callings",
+    "STORYPATH.Purviews": "Purviews",
+    "STORYPATH.Fatebindings": "Fatebindings",
+    "STORYPATH.Spells": "Spells",
+    "STORYPATH.Contacts": "Contacts",
+    "STORYPATH.LegendaryTitles": "Legendary Titles",
+    "STORYPATH.Birthrights": "Birthrights",
+    "STORYPATH.Experience": "Experience",
+    "STORYPATH.SavedRolls": "Saved Rolls",
+    "STORYPATH.Description&Notes": "Description & Notes",
+    "STORYPATH.Dice&Combat": "Dice & Combat",
+    "STORYPATH.Boons": "Boons",
+    "STORYPATH.Cancel": "Cancel",
+    "STORYPATH.NumberofSuccesses": "Number of Successes",
+    "STORYPATH.DiceRoller": "Dice Roller",
+    "STORYPATH.DiceRoll": "Dice Roll",
+    "STORYPATH.Success": "Success",
+    "STORYPATH.Threshhold": "Threshhold",
+    "STORYPATH.MortalFailure": "Mortal Failure",
+    "STORYPATH.CheckFailed": "Check Failed",
+    "STORYPATH.Botch": "Botch",
+    "STORYPATH.SaveRoll": "Save Roll",
+
+    "STORYPATH.Mental": "Mental",
+    "STORYPATH.Physical": "Physical",
+    "STORYPATH.Social": "Social"
+}

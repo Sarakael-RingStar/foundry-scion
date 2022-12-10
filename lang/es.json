@@ -1,0 +1,212 @@
+{
+    "STORYPATH.Name": "Nombre",
+    "STORYPATH.Chronicle": "Crónica",
+    "STORYPATH.Parent": "Progenitor",
+    "STORYPATH.Level": "Nivel",
+    "STORYPATH.Health": "Salud",
+    "STORYPATH.HealthLevels": "Niveles de salud",
+
+    "STORYPATH.Help": "Ayuda",
+
+    "STORYPATH.SetDotColors": "Establecer el color de los puntos",
+    "STORYPATH.DotColors": "Color de los puntos",
+
+    "STORYPATH.Tension": "Tensión",
+    "STORYPATH.TensionDescription": "Establecer la tensión actual de la partida.",
+    "STORYPATH.ShowResources": "Mostrar el cuadro de recursos",
+    "STORYPATH.ShowResourcesHint": "Quién puede ver el cuadro de recursos",
+    "STORYPATH.SheetStyle": "Formato de la ficha",
+    "STORYPATH.SheetStyleDescription": "Formato de la hoja de personaje",
+
+    "STORYPATH.Collateral": "Collateral",
+
+    "STORYPATH.AllPlayers": "Todos los jugadores",
+    "STORYPATH.SGOnly": "Solo el Guía Narrativo",
+    "STORYPATH.HideBox": "Ocultar el cuadro",
+
+    "STORYPATH.NameTitle": "Nombre/Título",
+    "STORYPATH.Archetype": "Arquetipo",
+
+    "STORYPATH.Creature": "Criatura",
+
+    "STORYPATH.Scion": "Scion",
+
+    "STORYPATH.Origin": "Origen",
+    "STORYPATH.Hero": "Héroe",
+
+    "STORYPATH.Attribute": "Atributo",
+    "STORYPATH.Attributes": "Atributos",
+
+    "STORYPATH.Skill": "Habilidad",
+    "STORYPATH.Skills": "Habilidades",
+
+    "STORYPATH.Combat": "Combate",
+    "STORYPATH.Movement": "Movimiento",
+    "STORYPATH.Legend": "Leyenda",
+    "STORYPATH.Imbued": "Imbuída",
+    "STORYPATH.Defense": "Defensa",
+    "STORYPATH.Momentum": "Impulso",
+
+    "STORYPATH.Equipped": "Equipado",
+
+    "STORYPATH.Penalty": "Penalización",
+
+    "STORYPATH.Attack": "Ataque",
+
+    "STORYPATH.Power": "Fuerza",
+    "STORYPATH.Finesse": "Precisión",
+    "STORYPATH.Resistance": "Resiliencia",
+
+    "STORYPATH.Intellect": "Intelecto",
+    "STORYPATH.Might": "Vigor",
+    "STORYPATH.Presence": "Presencia",
+    "STORYPATH.Cunning": "Ingenio",
+    "STORYPATH.Dexterity": "Destreza",
+    "STORYPATH.Manipulation": "Manipulación",
+    "STORYPATH.Resolve": "Resolución",
+    "STORYPATH.Stamina": "Aguante",
+    "STORYPATH.Composure": "Compostura",
+
+    "STORYPATH.Academics": "Academicismo",
+    "STORYPATH.Athletics": "Atletismo",
+    "STORYPATH.CloseCombat": "Combate CaC",
+    "STORYPATH.Culture": "Cultura",
+    "STORYPATH.Empathy": "Empatía",
+    "STORYPATH.Firearms": "Armas de fuego",
+    "STORYPATH.Integrity": "Integridad",
+    "STORYPATH.Leadership": "Liderazgo",
+    "STORYPATH.Medicine": "Medicina",
+    "STORYPATH.Occult": "Ocultismo",
+    "STORYPATH.Persuasion": "Persuasión",
+    "STORYPATH.Pilot": "Pilotar",
+    "STORYPATH.Science": "Ciencia",
+    "STORYPATH.Subterfuge": "Subterfugio",
+    "STORYPATH.Survival": "Supervivencia",
+    "STORYPATH.Technology": "Tecnología",
+    "STORYPATH.None": "Ninguna",
+
+    "STORYPATH.CurrentPenalty": "Penalización actual",
+    "STORYPATH.WoundPenalty": "Penalización por heridas",
+    "STORYPATH.Bruised": "Magullado",
+    "STORYPATH.Injured": "Herido",
+    "STORYPATH.Maimed": "Tullido",
+    "STORYPATH.ArmorPenalty": "Penalización por armadura",
+    "STORYPATH.Status": "Estado",
+
+    "STORYPATH.TargetNumber": "Número objetivo",
+    "STORYPATH.Reroll": "Volver a tirar",
+    "STORYPATH.DoubleSuccess": "Duplicar éxito",
+    "STORYPATH.DoubleSuccesses": "Duplicar éxitos",
+    "STORYPATH.Difficulty": "Dificultad",
+    "STORYPATH.NumberAgain": "#-Relanza",
+    "STORYPATH.Specialty": "Especialidad",
+    "STORYPATH.HasSpecialty": "Tiene especializad",
+    "STORYPATH.Specialties": "Especialidades",
+    "STORYPATH.RerollNumDice": "Reroll Num Dice",
+    "STORYPATH.Scale": "Escala",
+    "STORYPATH.Dice": "Dados",
+
+    "STORYPATH.Virtue": "Virtud",
+    "STORYPATH.Virtues": "Virtudes",
+    "STORYPATH.Intimacy": "Intimacy",
+    "STORYPATH.Intimacies": "Intimacies",
+    "STORYPATH.Stats": "Estadísticas",
+    "STORYPATH.Qualities": "Cualidades",
+    "STORYPATH.Flairs": "Talentos",
+    "STORYPATH.Wound": "Herida",
+    "STORYPATH.Wounds": "Heridas",
+
+    "STORYPATH.Gained": "Ganada",
+    "STORYPATH.Spent": "Gastada",
+    "STORYPATH.Remaining": "Restante",
+
+    "STORYPATH.Equipment": "Equipo",
+    "STORYPATH.Deeds": "Hazañas",
+    "STORYPATH.Notes": "Notas",
+    "STORYPATH.Traits": "Rasgos",
+    "STORYPATH.Paths": "Sendas",
+    "STORYPATH.Knacks": "Trucos",
+    "STORYPATH.Powers": "Poderes",
+    "STORYPATH.ShortTerm": "Corto plazo",
+    "STORYPATH.LongTerm": "Largo plazo",
+    "STORYPATH.Band": "Grupo",
+    "STORYPATH.Active": "Activa",
+
+
+    "STORYPATH.Description": "Descripción",
+    "STORYPATH.Items": "Objetos",
+    "STORYPATH.Templates": "Plantillas",
+
+    "STORYPATH.Requirement": "Requisitos",
+
+    "STORYPATH.Cost": "Coste",
+    "STORYPATH.LegendCost": "Coste en Leyenda",
+    "STORYPATH.Type": "Tipo",
+
+    "STORYPATH.Points": "Puntos",
+    "STORYPATH.Rating": "Valor",
+
+    "STORYPATH.Roll": "Tirar",
+    "STORYPATH.RollDice": "Tirada de dados",
+    "STORYPATH.RollSkill": "Tirada de habilidad",
+    "STORYPATH.RollPool": "Reserva de dados",
+
+    "STORYPATH.BonusSuccesses": "Éxitos adicionales",
+    "STORYPATH.MiscPenalty": "Penalización miscelánea",
+    "STORYPATH.DicePenalty": "Penalización de dados",
+    "STORYPATH.DiceModifier": "Modificador de dados",
+    "STORYPATH.Enhancement": "Mejora",
+    
+    "STORYPATH.MiscBonus": "Bonificación miscelánea",
+    "STORYPATH.BonusDice": "Bonificación a los dados",
+    "STORYPATH.Successes": "Éxitos",
+    "STORYPATH.DamageDice": "Dados de daño",
+    "STORYPATH.DamageSuccesses": "Éxitos de daño",
+
+    "STORYPATH.Primary": "Primaria",
+    "STORYPATH.Secondary": "Secundaria",
+    "STORYPATH.Desperation": "Desesperada",
+    "STORYPATH.Drive": "Motivación",
+    "STORYPATH.Extras": "Extras",
+    "STORYPATH.Pool": "Reserva",
+    "STORYPATH.Pools": "Reservas",
+
+    "STORYPATH.Languages": "Idiomas",
+
+    "STORYPATH.TraitSave": "Update",
+    "STORYPATH.TraitSelectorSpecial": "Especial (separada con punto y coma)",
+
+    "STORYPATH.Effects": "Efectos",
+    "STORYPATH.EffectNew": "Nuevo efecto",
+    "STORYPATH.EffectTemporary": "Efecto Temporal",
+    "STORYPATH.EffectPassive": "Efecto Pasivo",
+    "STORYPATH.EffectInactive": "Efecto Inactivo",
+
+    "STORYPATH.Add": "Add",
+    "STORYPATH.EffectCreate": "Crear efecto",
+    "STORYPATH.EffectToggle": "Alternar efecto",
+    "STORYPATH.EffectEdit": "Editar efecto",
+    "STORYPATH.EffectDelete": "Eliminar efecto",
+    "STORYPATH.Duration": "Duración",
+    "STORYPATH.Source": "Fuente",
+
+    "STORYPATH.Initiative": "Iniciativa",
+
+    "STORYPATH.Guide": "Guía",
+    "STORYPATH.Follower": "Seguidores",
+    "STORYPATH.Relic": "Reliquia",
+    "STORYPATH.Other": "Otro",
+
+    "STORYPATH.ImbueLegend": "Imbuir Leyenda",
+
+    "STORYPATH.Imbue": "Imbuída",
+    "STORYPATH.Spend": "Gastada",
+
+    "STORYPATH.Armor": "Armadura",
+
+    "STORYPATH.ItemRating": "Valor del objeto",
+
+    "STORYPATH.EnhancementOn0Successes": "Mejora con 0 éxitos",
+    "STORYPATH.WoundLevel": "Nivel de herida",
+    "STORYPATH.Wounded": "Herido"
+}

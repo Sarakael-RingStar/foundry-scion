@@ -1,0 +1,26 @@
+{
+  "name": "storypath-fvtt",
+  "version": "0.1.0",
+  "description": "Storypath system",
+  "scripts": {
+    "build": "gulp",
+    "compile": "gulp css",
+    "watch": "gulp",
+    "gulp": "gulp"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "Aliharu",
+  "license": "Apache License, Version 2.0",
+  "private": true,
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.1",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^0.8.8-9"
+  }
+}

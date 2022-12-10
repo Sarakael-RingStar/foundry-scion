@@ -1,0 +1,367 @@
+<form class="{{cssClass}} flexcol character-sheet-background" autocomplete="off">
+
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+    <div class="header-fields">
+      <div>
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
+            placeholder="{{localize 'STORYPATH.Name'}}" /></h1>
+      </div>
+      <div class="grid grid-2col flexrow">
+        <h1 class="charname"> <select id="tier-select" name="system.info.tier" data-type="String">
+            {{#select system.info.tier}}
+            <option value="origin">{{localize "STORYPATH.Origin"}}</option>
+            <option value="hero">{{localize "STORYPATH.Hero"}}</option>
+            <option value="demigod">{{localize "STORYPATH.Demigod"}}</option>
+            <option value="dragon">{{localize "STORYPATH.Dragon"}}</option>
+            {{/select}}
+          </select></h1>
+        <h1 class="charname"><input name="system.info.parent" type="text" value="{{system.info.parent}}"
+            placeholder="{{localize 'STORYPATH.Parent'}}" /></h1>
+        <!-- <h1 class="charname"><input name="system.details.chronicle" type="text" value="{{system.details.chronicle}}"
+            placeholder="{{localize 'STORYPATH.Chronicle'}}" /></h1> -->
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="stats">{{localize "STORYPATH.Stats"}}</a>
+    <a class="item" data-tab="traits">{{localize "STORYPATH.Traits"}}</a>
+    <a class="item" data-tab="powers">{{localize "STORYPATH.Powers"}}</a>
+    <a class="item" data-tab="deeds">{{localize "STORYPATH.Deeds"}}</a>
+    <a class="item" data-tab="effects">{{localize "STORYPATH.Effects"}}</a>
+    <a class="item" data-tab="description">{{localize "STORYPATH.Description"}}</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    <!-- Code for attribute and skill dots taken from foundry-V5
+
+    MIT License
+
+    Copyright (c) 2020 Ray Ji
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE. -->
+
+    {{!-- Stats Tab --}}
+    <div class="tab flex-center" data-group="primary" data-tab="stats">
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Skills'}}
+      <div class="attributes grid grid-3col flex-group-center">
+        {{#each system.skills as |skill key|}}
+        <div class="skill flexrow flex-center">
+          <input class="skill-checkbox" id="skill" name="system.skills.{{key}}.path" type="checkbox" {{checked
+            skill.path}}>
+          <label for="system.skills.{{key}}.value" class="resource-label vrollable roll-skill"
+            data-roll="{{skill.value}}" data-skill="{{key}}" data-label="{{skill.name}}">{{localize
+            skill.name}}</label>
+          <div class="resource-value" data-value="{{skill.value}}" data-name="system.skills.{{key}}.value">
+            {{#numLoop 5}}
+            <span class="resource-value-step" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Attributes'}}
+      <div class="grid grid-4col">
+        <div></div>
+        <div class="resource-label flexrow flex-center">
+          <label>{{localize "STORYPATH.Mental"}}</label>
+        </div>
+        <div class="resource-label flexrow flex-center">
+          <label>{{localize "STORYPATH.Physical"}}</label>
+        </div>
+        <div class="resource-label flexrow flex-center">
+          <label>{{localize "STORYPATH.Social"}}</label>
+        </div>
+      </div>
+      <div class="attributes grid grid-4col flex-group-center">
+        {{#each system.approaches as |approach akey|}}
+        <div class="attribute flexrow flex-center resource-label">
+          {{localize approach.label}}
+        </div>
+        {{#each ../system.attributes as |attribute key|}}
+        {{#ifEquals attribute.approach akey}}
+        <div class="attribute flexrow flex-center">
+          <label for="system.attributes.{{key}}.value" class="resource-label resource-value"
+            data-roll="{{attribute.value}}" data-label="{{attribute.name}}">{{localize attribute.name}}</label>
+          <div class="resource-value" data-value="{{attribute.value}}" data-name="system.attributes.{{key}}.value">
+            {{#numLoop 5}}
+            <span class="resource-value-step" data-index="{{this}}"></span>
+            {{/numLoop}}
+          </div>
+        </div>
+        {{/ifEquals}}
+        {{/each}}
+        {{/each}}
+      </div>
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Combat'}}
+      <div>
+        <div id="character-combat-tab">
+          <div {{#ifEquals system.info.tier 'origin' }} class="grid grid-2col flex-group-center" {{/ifEquals}}
+            {{#ifEquals system.info.tier 'hero' }} class="grid grid-3col flex-group-center" {{/ifEquals}} {{#ifEquals
+            system.info.tier 'dragon' }} class="grid grid-3col flex-group-center" {{/ifEquals}} {{#ifEquals
+            system.info.tier 'demigod' }} class="grid grid-4col flex-group-center" {{/ifEquals}}>
+            {{#ifNotEquals system.info.tier 'origin'}}
+            {{#ifEquals system.info.tier 'dragon'}}
+            <div class="resource-content flexrow flex-center flex-between">
+              <div class="grid grid-2col">
+                <div>
+                  <label class="resource-label roll-skill" data-skill="inheritance">{{localize
+                    "STORYPATH.Inheritance"}}</label>
+                  <div class="resource-content flexrow flex-center flex-between">
+                    <input type="number" name="system.inheritance.value" value="{{system.inheritance.value}}"
+                      data-dtype="Number" />
+                    /
+                    <input type="number" name="system.inheritance.max" value="{{system.inheritance.max}}"
+                      data-dtype="Number" />
+                  </div>
+                </div>
+                <div>
+                  <label class="resource-label">{{localize "STORYPATH.Imbued"}}</label>
+                  <div class="resource-content flexrow flex-center flex-between">
+                    <input type="number" name="system.inheritance.imbued" value="{{system.inheritance.imbued}}"
+                      data-dtype="Number" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{else}}
+            <div class="resource-content flexrow flex-center flex-between">
+              <div class="grid grid-2col">
+                <div>
+                  <label class="resource-label roll-skill" data-skill="legend">{{localize "STORYPATH.Legend"}}</label>
+                  <div class="resource-content flexrow flex-center flex-between">
+                    <input type="number" name="system.legend.value" value="{{system.legend.value}}"
+                      data-dtype="Number" />
+                    /
+                    <input type="number" name="system.legend.total" value="{{system.legend.total}}"
+                      data-dtype="Number" />
+                  </div>
+                </div>
+                <div>
+                  <label class="resource-label">{{localize "STORYPATH.Imbued"}}</label>
+                  <div class="resource-content flexrow flex-center flex-between">
+                    <input type="number" name="system.legend.imbued" value="{{system.legend.imbued}}"
+                      data-dtype="Number" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/ifEquals}}
+            {{/ifNotEquals}}
+            <div class="resource-content flexrow flex-center flex-between">
+              <div>
+                <label class="resource-label roll-skill" data-skill="defense">{{localize "STORYPATH.Defense"}}</label>
+                <input type="number" name="system.defense.value" value="{{system.defense.value}}" data-dtype="Number" />
+              </div>
+            </div>
+            <div class="resource-content flexrow flex-center flex-between">
+              <div>
+                <label class="resource-label roll-skill" data-skill="movement">{{localize "STORYPATH.Movement"}}</label>
+                <input type="number" name="system.movement.value" value="{{system.movement.value}}"
+                  data-dtype="Number" />
+              </div>
+            </div>
+            {{#ifEquals system.info.tier 'demigod' }}
+            <div>
+              <div>
+                <label class="resource-label">{{localize "STORYPATH.DivinityDice"}}</label>
+                <input type="number" name="system.divinitydice.value" value="{{system.divinitydice.value}}"
+                  data-dtype="Number" />
+              </div>
+            </div>
+            {{/ifEquals}}
+          </div>
+          <div class="grid grid-2col flex-group-center">
+            <button class="roll-button" id="rollSkill"><i class="fas fa-dice-d10"></i>{{localize
+              "STORYPATH.Skill"}}</button>
+            <button class="roll-button" id="rollInitiative"><i class="fas fa-dice-d10"></i>{{localize
+              "STORYPATH.Initiative"}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-2col">
+        <div>
+          {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Health' small=true
+          name='health' list=actor.health}}
+        </div>
+        <div>
+          {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Conditions' small=true
+          name='condition' list=actor.conditions}}
+        </div>
+      </div>
+    </div>
+
+    {{!-- Traits Tab --}}
+    <div class="tab items" data-group="primary" data-tab="traits">
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Specialties'
+      name='specialty' list=actor.specialties}}
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Paths' name='path' list=actor.paths}}
+      {{> systems/storypath-fvtt/templates/actor/item-points-section-header.html text='STORYPATH.Callings' name='calling'
+      list=actor.callings}}
+      {{#ifNotEquals system.info.tier 'origin'}}
+      <div>
+        {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.LegendaryTitles'}}
+        <div class="flex-center mt-1">
+          <textarea type="text" name="system.legend.title" rows="3">{{system.legend.title}}</textarea>
+        </div>
+      </div>
+      {{/ifNotEquals}}
+      <div class="grid grid-2col">
+        <div>
+          {{#ifEquals system.info.tier 'dragon'}}
+          {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Remembrance' small=true}}
+          {{else}}
+          {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Virtue' small=true}}
+          {{/ifEquals}}
+          <div class="grid grid-3col flex-center">
+            <input type="text" name="system.virtue.virtue" value="{{system.virtue.virtue}}" />
+            <div class="resource-value" data-value="{{system.virtue.value}}" data-name="system.virtue.value">
+              {{#numLoop 5}}
+              <span class="single-resource-value-step" data-index="{{this}}"></span>
+              {{/numLoop}}
+            </div>
+            <input type="text" name="system.virtue.countervirtue" value="{{system.virtue.countervirtue}}" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{!-- Powers Tab --}}
+    <div class="tab items" data-group="primary" data-tab="powers">
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Knacks' name='knack'
+      list=actor.knacks}}
+      {{> systems/storypath-fvtt/templates/actor/item-points-section-header.html text='STORYPATH.Birthrights' name='birthright'
+      list=actor.birthrights}}
+      {{#ifNotEquals system.info.tier 'origin'}}
+      {{#ifNotEquals system.info.tier 'dragon'}}
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Boons' name='boon' list=actor.boons}}
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Purviews' name='purview'
+      list=actor.purviews}}
+      {{/ifNotEquals}}
+      {{#ifEquals system.info.tier 'dragon'}}
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.DragonMagics' name='dragon_magic'
+      list=actor.dragon_magic}}
+      {{/ifEquals}}
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Spells' name='spell'
+      list=actor.spells}}
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Fatebindings' name='fatebinding'
+      list=actor.fatebindings}}
+      {{/ifNotEquals}}
+    </div>
+
+    {{!-- Deeds Tab --}}
+    <div class="tab deeds" data-group="primary" data-tab="deeds">
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Deeds'}}
+      <div>
+        {{#ifEquals system.info.tier 'dragon'}}
+        <div>
+          <label class="resource-label">{{localize "STORYPATH.Worldly"}}</label>
+          <textarea type="text" name="system.deeds.worldly" rows="5">{{system.deeds.worldly}}</textarea>
+        </div>
+        <div>
+          <label class="resource-label">{{localize "STORYPATH.Memory"}}</label>
+          <textarea type="text" name="system.deeds.memory" rows="5">{{system.deeds.memory}}</textarea>
+        </div>
+        <div>
+          <label class="resource-label">{{localize "STORYPATH.Draconic"}}</label>
+          <textarea type="text" name="system.deeds.draconic" rows="5">{{system.deeds.draconic}}</textarea>
+        </div>
+        {{else}}
+        <div>
+          <label class="resource-label">{{localize "STORYPATH.ShortTerm"}}</label>
+          <textarea type="text" name="system.deeds.short" rows="5">{{system.deeds.short}}</textarea>
+        </div>
+        <div>
+          <label class="resource-label">{{localize "STORYPATH.LongTerm"}}</label>
+          <textarea type="text" name="system.deeds.long" rows="5">{{system.deeds.long}}</textarea>
+        </div>
+        <div>
+          <label class="resource-label">{{localize "STORYPATH.Band"}}</label>
+          <textarea type="text" name="system.deeds.band" rows="5">{{system.deeds.band}}</textarea>
+        </div>
+        {{/ifEquals}}
+      </div>
+      <div>
+        {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Experience'}}
+        <div class="grid grid-3col">
+          <div class="resource-content flexrow flex-center flex-between">
+            <div>
+              <label class="resource-label">{{localize "STORYPATH.Gained"}}</label>
+              <input type="number" name="system.experience.gained" value="{{system.experience.gained}}"
+                data-dtype="Number" />
+            </div>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <div>
+              <label class="resource-label">{{localize "STORYPATH.Spent"}}</label>
+              <input type="number" name="system.experience.spent" value="{{system.experience.spent}}"
+                data-dtype="Number" />
+            </div>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <div>
+              <label class="resource-label">{{localize "STORYPATH.Remaining"}}</label>
+              <div>{{system.experience.remaining}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Contacts' name='contact'
+      list=actor.contacts}}
+    </div>
+
+    <div class="tab effects" data-group="primary" data-tab="effects">
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.SavedRolls'}}
+      <ol class="items-list">
+        {{#each system.savedRolls as |item id|}}
+        <li class="item flexrow" data-item-id="{{id}}">
+          <h4 class="item-name">{{item.name}}</h4>
+          <div class="resource-table-value resource-value-static">
+            {{item.rollType}}
+          </div>
+          <div class="item-controls">
+            <a class="item-control quick-roll" title="Roll"><i class="fas fa-dice-d10"></i></a>
+            <a class="item-control saved-roll" title="Edit"><i class="fas fa-edit"></i></a>
+            <a class="item-control delete-saved-roll" title="Delete Item"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Effects'}}
+      {{> systems/storypath-fvtt/templates/actor/active-effects.html}}
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography" data-group="primary" data-tab="description">
+      <div>
+        {{> systems/storypath-fvtt/templates/actor/item-section-header.html text='STORYPATH.Equipment' name='item'
+        list=actor.gear}}
+      </div>
+      {{> systems/storypath-fvtt/templates/actor/section-header.html text='STORYPATH.Description&Notes'}}
+      {{editor system.biography target="system.biography" button=true owner=owner editable=true}}
+    </div>
+
+  </section>
+</form>

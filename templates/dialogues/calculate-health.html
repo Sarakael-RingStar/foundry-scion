@@ -1,0 +1,28 @@
+<form>
+    <div class="sheet-body storypath" style="margin-bottom:10px;">
+        <p class="resource-label">Calculate Health Values.</p>
+        <p>Doing this will clear all damage from your character.</p>
+        <div>
+            <div class="form-group">
+                <div class="d-flex flex-center resources">
+                    <div>
+                        <div class="resource-label">{{localize "STORYPATH.Armor"}} (-0)</div>
+                        <input type="number" id="armor" data-dtype="Number" value="{{armor}}" />
+                    </div>
+                    <div>
+                        <div class="resource-label">{{localize "STORYPATH.Bruised"}} (-1)</div>
+                        <input type="number" id="bruised" data-dtype="Number" value="{{bruised}}" />
+                    </div>
+                    <div>
+                        <div class="resource-label">{{localize "STORYPATH.Injured"}} (-2)</div>
+                        <input type="number" id="injured" data-dtype="Number" value="{{injured}}" />
+                    </div>
+                    <div>
+                        <div class="resource-label">{{localize "STORYPATH.Maimed"}} (-4)</div>
+                        <input type="number" id="maimed" data-dtype="Number" value="{{maimed}}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

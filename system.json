@@ -1,0 +1,38 @@
+{
+  "id": "storypath-fvtt",
+  "title": "Storypath",
+  "description": "Second Edition Scion is a contemporary game of modern myth and epic heroism powered by the Storypath system.  \nScion is a game about Gods and humanity, and everything in between. \nScion: Origin details the Scions when they’re still (mostly) human, before the Visitation that introduces them to the divine World — they’re exceptional humans, perhaps, blessed with luck and skill or cursed with ill fortune and strange trials in their lives, but humans nonetheless.",
+  "url": "https://gitlab.com/sigil-vtt-projects/onyx-path/storypath-fvtt",
+  "license": "https://gitlab.com/sigil-vtt-projects/onyx-path/storypath-fvtt/-/raw/main/LICENSE.md",
+  "version": "1.2.0",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10"
+  },
+  "esmodules": [
+    "storypath.js"
+  ],
+  "styles": [
+    "css/storypath.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "es",
+      "name": "Spanish",
+      "path": "lang/es.json",
+      "flags": {}
+    }
+  ],
+  "relationships": [],
+  "socket": true,
+  "manifest": "https://gitlab.com/sigil-vtt-projects/onyx-path/storypath-fvtt/-/raw/main/system.json",
+  "download": "https://gitlab.com/sigil-vtt-projects/onyx-path/storypath-fvtt/-/jobs/2961745288/artifacts/raw/storypath-fvtt-1.2.0.zip",
+  "gridDistance": 5,
+  "gridUnits": "ft"
+}

@@ -1,0 +1,145 @@
+{{#ifEquals data.rollType 'base'}}
+<div class="resource flex-center">
+    <label class="resource-label">{{localize "STORYPATH.Dice"}}</label>
+</div>
+<div class="resource d-flex flex-center mb-1">
+    <input name="object.dice" value="{{data.dice}}" type="number">
+</div>
+{{else}}
+<div class="resource grid grid-2col flex-center">
+    {{#ifEquals data.characterType 'scion'}}
+
+    <label class="resource-label">{{localize "STORYPATH.Attribute"}}: </label>
+    <select name="object.attribute" value="{{data.attribute}}" data-type="String">
+        {{#select data.attribute}}
+        <option value="intellect">{{localize "STORYPATH.Intellect"}}</option>
+        <option value="cunning">{{localize "STORYPATH.Cunning"}}</option>
+        <option value="resolve">{{localize "STORYPATH.Resolve"}}</option>
+        <option value="might">{{localize "STORYPATH.Might"}}</option>
+        <option value="dexterity">{{localize "STORYPATH.Dexterity"}}</option>
+        <option value="stamina">{{localize "STORYPATH.Stamina"}}</option>
+        <option value="presence">{{localize "STORYPATH.Presence"}}</option>
+        <option value="manipulation">{{localize "STORYPATH.Manipulation"}}</option>
+        <option value="composure">{{localize "STORYPATH.Composure"}}</option>
+        <option value="none">{{localize "STORYPATH.None"}}</option>
+        {{/select}}
+    </select>
+
+    <label class="resource-label">{{localize "STORYPATH.Skill"}}: </label>
+    <select class="update-specialties" name="object.skill" value="{{data.skill}}" data-type="String">
+        {{#select data.skill}}
+        <option value="academics">{{localize "STORYPATH.Academics"}}</option>
+        <option value="athletics">{{localize "STORYPATH.Athletics"}}</option>
+        <option value="close">{{localize "STORYPATH.CloseCombat"}}</option>
+        <option value="culture">{{localize "STORYPATH.Culture"}}</option>
+        <option value="empathy">{{localize "STORYPATH.Empathy"}}</option>
+        <option value="firearms">{{localize "STORYPATH.Firearms"}}</option>
+        <option value="integrity">{{localize "STORYPATH.Integrity"}}</option>
+        <option value="leadership">{{localize "STORYPATH.Leadership"}}</option>
+        <option value="medicine">{{localize "STORYPATH.Medicine"}}</option>
+        <option value="occult">{{localize "STORYPATH.Occult"}}</option>
+        <option value="persuasion">{{localize "STORYPATH.Persuasion"}}</option>
+        <option value="pilot">{{localize "STORYPATH.Pilot"}}</option>
+        <option value="science">{{localize "STORYPATH.Science"}}</option>
+        <option value="subterfuge">{{localize "STORYPATH.Subterfuge"}}</option>
+        <option value="survival">{{localize "STORYPATH.Survival"}}</option>
+        <option value="technology">{{localize "STORYPATH.Technology"}}</option>
+        <option value="legend">{{localize "STORYPATH.Legend"}}</option>
+        <option value="inheritance">{{localize "STORYPATH.Inheritance"}}</option>
+        <option value="none">{{localize "STORYPATH.None"}}</option>
+        {{/select}}
+    </select>
+
+    {{#ifEquals data.rollType 'itemRoll'}}
+    <label class="resource-label">{{localize "STORYPATH.ItemRating"}}: </label>
+    <input name="object.itemDice" value="{{data.itemDice}}" type="number">
+    {{/ifEquals}}
+
+    <label class="resource-label">{{localize "STORYPATH.Specialty"}}: </label>
+    <select name="object.specialty" value="{{data.specialty}}" data-type="String">
+        {{#select data.specialty}}
+        <option value=""></option>
+        {{#each data.specialtyList as |item id|}}
+        <option value="{{id}}">{{item.name}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+
+    {{/ifEquals}}
+
+
+    {{#ifEquals data.characterType 'npc'}}
+
+    <label class="resource-label">{{localize "STORYPATH.Pool"}}: </label>
+    <select name="object.pool" value="{{data.pool}}" data-type="String">
+        {{#select data.pool}}
+        <option value="primary">{{localize "STORYPATH.Primary"}}</option>
+        <option value="secondary">{{localize "STORYPATH.Secondary"}}</option>
+        <option value="desperation">{{localize "STORYPATH.Desperation"}}</option>
+        <option value="initiative">{{localize "STORYPATH.Initiative"}}</option>
+        <option value="threat">{{localize "STORYPATH.Threat"}}</option>
+        {{/select}}
+    </select>
+
+    {{/ifEquals}}
+
+    <label class="resource-label">{{localize "STORYPATH.Scale"}}: </label>
+    <select name="object.scale" value="{{data.scale}}" data-type="number">
+        {{#select data.scale}}
+        <option value="0">{{localize "STORYPATH.Standard"}} (0)</option>
+        <option value="1">{{localize "STORYPATH.Elite"}} (1)</option>
+        <option value="2">{{localize "STORYPATH.Supernatural"}} (2)</option>
+        <option value="3">{{localize "STORYPATH.Incredible"}} (3)</option>
+        <option value="4">{{localize "STORYPATH.Godlike"}} (4)</option>
+        <option value="5">{{localize "STORYPATH.Supernal"}} (5)</option>
+        <option value="6">{{localize "STORYPATH.Titanic"}} (6)</option>
+        {{/select}}
+    </select>
+
+    <label class="resource-label">{{localize "STORYPATH.DoubleSuccesses"}}: </label>
+    <input type="checkbox" name="object.doubleSuccesses" value="{{data.doubleSuccesses}}" {{checked
+        data.doubleSuccesses}}>
+
+    <label class="resource-label">{{localize "STORYPATH.EnhancementOn0Successes"}} </label>
+    <input type="checkbox" name="object.enhancementOnZero" value="{{data.enhancementOnZero}}" {{checked
+        data.enhancementOnZero}}>
+</div>
+
+{{/ifEquals}}
+<div class="resource grid grid-2col flex-center">
+    <div>
+        <label class="resource-label">{{localize "STORYPATH.DiceModifier"}} </label>
+        <input name="object.diceModifier" value="{{data.diceModifier}}" type="number">
+    </div>
+    <div>
+        <label class="resource-label">{{localize "STORYPATH.Enhancement"}} </label>
+        <input name="object.enhancement" value="{{data.enhancement}}" type="number">
+    </div>
+</div>
+
+<div class="resource grid grid-2col flex-center">
+    <div>
+        <label class="resource-label">{{localize "STORYPATH.TargetNumber"}} </label>
+        <input name="object.targetNumber" value="{{data.targetNumber}}" type="number">
+    </div>
+    <div>
+        <label class="resource-label">{{localize "STORYPATH.NumberAgain"}}</label>
+        <input name="object.numberAgain" value="{{data.numberAgain}}" type="number">
+    </div>
+</div>
+
+{{#ifEquals data.scionType 'demigod'}}
+<div class="resource flex-center">
+    <label class="resource-label">{{localize "STORYPATH.DivinityDice"}}</label>
+</div>
+<div class="resource d-flex flex-center mb-1">
+    <input name="object.divinityDice" value="{{data.divinityDice}}" type="number">
+</div>
+{{/ifEquals}}
+
+<div class="resource flex-center">
+    <label class="resource-label">{{localize "STORYPATH.Difficulty"}}</label>
+</div>
+<div class="resource d-flex flex-center mb-1">
+    <input name="object.difficulty" value="{{data.difficulty}}" type="number">
+</div>

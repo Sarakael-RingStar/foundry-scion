@@ -1,0 +1,67 @@
+<div class="section-header">
+  <div {{#if isNpc}} class="section-header-button section-header-npc" {{else}} class="section-header-button" {{/if}}>
+    <div></div>
+    <div style="margin-left: 20px;">
+      {{localize text}}
+    </div>
+    <div class="section-header-icon">
+      <a class="item-create" title="Create {{name}}" data-type="{{name}}">
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+  </div>
+  {{#if small}}
+  <img {{#if isNpc}} class="section-header-img-npc" {{else}} class="section-header-img" {{/if}}
+    src="{{actor.headerImgSmall}}">
+  {{else}}
+  <img {{#if isNpc}} class="section-header-img-npc" {{else}} class="section-header-img" {{/if}}
+    src="{{actor.headerImg}}">
+  {{/if}}
+</div>
+<div>
+  <ol class="items-list" {{#if small}} style="max-height: 150px;" {{/if}}>
+    {{#each list as |item id|}}
+    <li class="item flexrow item-row" data-item-id="{{item._id}}">
+      <div class="item-image">
+        {{#ifEquals item.type 'health'}}
+          <input name="system.wounded"  data-dtype="Boolean" class="item-wounded" type="checkbox" {{checked item.system.wounded}}>
+        {{else}}
+        <img class="list-item-image" src="{{item.img}}" title="{{item.name}}" width="24"
+          height="24" />
+        {{/ifEquals}}
+      </div>
+      <h4 class="item-name">
+        {{item.name}}
+        {{#if item.system.active}}
+         (Active)
+        {{/if}}
+        {{#ifEquals item.type 'health'}}
+          (-{{item.system.level}})
+        {{/ifEquals}}
+      </h4>
+      
+      {{#ifEquals item.type 'boon'}}
+      <h4 class="item-name">Cost: {{item.system.costtype}} {{item.system.cost}} Legend</h4>
+      {{/ifEquals}}
+    
+      {{#ifEquals item.type 'dragon_magic'}}
+      <h4 class="item-name">Cost: {{item.system.costtype}} {{item.system.cost}} Legend</h4>
+      {{/ifEquals}}
+
+      {{#ifEquals item.type 'knack'}}
+      <h4 class="item-name">Cost: {{item.system.cost}} {{item.system.costtype}}</h4>
+      {{/ifEquals}}
+      <div class="item-controls">
+        <a class="item-control item-chat" title="Chat Item"><i class="fas fa-comment"></i></a>
+        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+    <li class="item-description">
+      <div>
+        {{{item.system.description}}}
+      </div>
+    </li>
+    {{/each}}
+  </ol>
+</div>

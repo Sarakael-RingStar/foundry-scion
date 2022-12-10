@@ -1,0 +1,47 @@
+<div class="section-header">
+  <div class="section-header-button">
+    <div></div>
+    <div style="margin-left: 20px;">
+      {{localize text}}
+    </div>
+    <div class="section-header-icon">
+      <a class="item-create" title="Create {{name}}" data-type="{{name}}">
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+  </div>
+  {{#if small}}
+  <img class="section-header-img" src="{{actor.headerImgSmall}}">
+  {{else}}
+  <img class="section-header-img" src="{{actor.headerImg}}">
+  {{/if}}
+</div>
+<div>
+  <ol class="items-list" {{#if small}} style="max-height: 150px;" {{/if}}>
+    {{#each list as |item id|}}
+    <li class="item flexrow item-row" data-item-id="{{item._id}}">
+      <div class="item-image"><img class="list-item-image" src="{{item.img}}" title="{{item.name}}" width="24" height="24" /></div>
+      <h4 class="item-name">{{item.name}}</h4>
+      {{#if item.system.type}}
+      <h4 class="resource-table-value">{{item.system.type}}</h4>
+      {{/if}}
+      <div class="resource-value-static" data-value="{{item.system.points}}" data-name="items.{{item._id}}">
+        {{#numLoop 5}}
+        <span class="resource-value-static-step" data-index="{{this}}"></span>
+        {{/numLoop}}
+      </div>
+      <div class="item-controls">
+        <a class="item-control item-roll" title="Roll Item"><i class="fas fa-dice-d10"></i></a>
+        <a class="item-control item-chat" title="Chat Item"><i class="fas fa-comment"></i></a>
+        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+      </div>
+    </li>
+    <li class="item-description">
+      <div>
+        {{{item.system.description}}}
+      </div>
+    </li>
+    {{/each}}
+  </ol>
+</div>

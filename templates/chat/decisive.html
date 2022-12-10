@@ -1,0 +1,19 @@
+<div class="chat-card">
+    <div class="card-content">{{localize "STORYPATH.DiceRoll"}}</div>
+    <div class="card-buttons">
+        <div class="flexrow 1">
+            <div>{{localize "STORYPATH.DiceRoller"}} - {{localize "STORYPATH.NumberofSuccesses"}}<div class="dice-roll">
+                    <div class="dice-result">
+                        <div class="dice-formula">${roll.formula}</div>
+                        <div class="dice-tooltip">
+                            <div class="dice">
+                                <ol class="dice-rolls">${get_dice}</ol>
+                            </div>
+                        </div>
+                        <h4 class="dice-total">${total} {{localize "STORYPATH.Successes"}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
